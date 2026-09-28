@@ -14,9 +14,21 @@
 | 分支 | 版本 | 状态 |
 |---|---|---|
 | `1.20.1`（默认） | 1.9.x | 当前对外发布所对应的分支 |
-| **`1.20.1-update`** | **1.11** | **Mantle 1.11 的 Fabric 移植 WIP —— 主战场** |
+| `1.20.1-update` | 1.11 | **原作者 AlphaMode 的 WIP 分支**（tip `eb1e9a5a`，2026-01-12）。不要在其上提交 |
+| **`mcr/mantle-1.11`** | **1.11** | **我们的工作分支**（`mcr` = MinecraftReconstruction），基点即上述 `eb1e9a5a` —— 主战场 |
 | `1.21.1` | — | Alpha 的 1.21.1 尝试 |
 | `1.11` / `1.12` / … | — | 继承自上游 SlimeKnights 的 Forge 分支，不是 Fabric 适配 |
+
+### 归属与分支纪律
+
+`Alpha-s-Stuff/Mantle` 里的 `1.20.1-update` 是 **AlphaMode 的工作分支**，本仓库 fork 时一并带入。
+我们的所有改动都应落在 `mcr/*` 分支上，这样 `git diff eb1e9a5a..mcr/mantle-1.11` 就能一眼看出
+"哪些是原作者的、哪些是 AI 生成的"。当前该 diff 为：**5 个文件，+292/−29**，真正的代码改动只有
+`MantleItemLayerModel.java`。
+
+✅ **已于 2026-09-28 清理**：我们 fork 的 `1.20.1-update` 已 force push 还原到 Alpha 的原始 tip `eb1e9a5a`，
+与上游完全一致；我们的全部改动都在 `mcr/mantle-1.11`。
+默认分支 `1.20.1` **刻意保留**文档提交（仅新增文档、未改代码），以保证仓库首页能看到归属与 "largely vibed" 声明。
 
 ## `1.20.1-update` 的现状（已复现）
 
